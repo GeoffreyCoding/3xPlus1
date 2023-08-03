@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tbc_Main = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pn_UI = new System.Windows.Forms.Panel();
-            this.btn_Calc = new System.Windows.Forms.Button();
-            this.tb_Number = new System.Windows.Forms.TextBox();
-            this.pn_Settings = new System.Windows.Forms.Panel();
-            this.CLB_ChartFormat = new System.Windows.Forms.CheckedListBox();
-            this.rtb_NumbersChosen = new System.Windows.Forms.RichTextBox();
             this.pnl_Graphs = new System.Windows.Forms.Panel();
             this.cht_Collatz = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pn_Settings = new System.Windows.Forms.Panel();
+            this.CLB_ChartFormat = new System.Windows.Forms.CheckedListBox();
+            this.pn_UI = new System.Windows.Forms.Panel();
+            this.rtb_NumbersChosen = new System.Windows.Forms.RichTextBox();
+            this.tb_Number = new System.Windows.Forms.TextBox();
+            this.btn_Calc = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_ClearGraph = new System.Windows.Forms.Button();
             this.tbc_Main.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.pn_UI.SuspendLayout();
-            this.pn_Settings.SuspendLayout();
             this.pnl_Graphs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cht_Collatz)).BeginInit();
+            this.pn_Settings.SuspendLayout();
+            this.pn_UI.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbc_Main
@@ -74,47 +75,30 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // tabPage2
+            // pnl_Graphs
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1317, 552);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Stock Ticker";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.pnl_Graphs.Controls.Add(this.cht_Collatz);
+            this.pnl_Graphs.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Graphs.Name = "pnl_Graphs";
+            this.pnl_Graphs.Size = new System.Drawing.Size(1039, 409);
+            this.pnl_Graphs.TabIndex = 2;
             // 
-            // pn_UI
+            // cht_Collatz
             // 
-            this.pn_UI.BackColor = System.Drawing.Color.Gray;
-            this.pn_UI.Controls.Add(this.rtb_NumbersChosen);
-            this.pn_UI.Controls.Add(this.tb_Number);
-            this.pn_UI.Controls.Add(this.btn_Calc);
-            this.pn_UI.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pn_UI.Location = new System.Drawing.Point(0, 410);
-            this.pn_UI.Name = "pn_UI";
-            this.pn_UI.Size = new System.Drawing.Size(1317, 142);
-            this.pn_UI.TabIndex = 0;
-            // 
-            // btn_Calc
-            // 
-            this.btn_Calc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Calc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Calc.Location = new System.Drawing.Point(695, 81);
-            this.btn_Calc.Name = "btn_Calc";
-            this.btn_Calc.Size = new System.Drawing.Size(344, 46);
-            this.btn_Calc.TabIndex = 0;
-            this.btn_Calc.Text = "Calculate";
-            this.btn_Calc.UseVisualStyleBackColor = true;
-            this.btn_Calc.Click += new System.EventHandler(this.btn_Calc_Click);
-            // 
-            // tb_Number
-            // 
-            this.tb_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Number.Location = new System.Drawing.Point(695, 20);
-            this.tb_Number.Name = "tb_Number";
-            this.tb_Number.Size = new System.Drawing.Size(344, 38);
-            this.tb_Number.TabIndex = 1;
+            chartArea2.Name = "ChartArea1";
+            this.cht_Collatz.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.cht_Collatz.Legends.Add(legend2);
+            this.cht_Collatz.Location = new System.Drawing.Point(4, -2);
+            this.cht_Collatz.Name = "cht_Collatz";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.cht_Collatz.Series.Add(series2);
+            this.cht_Collatz.Size = new System.Drawing.Size(1035, 412);
+            this.cht_Collatz.TabIndex = 3;
+            this.cht_Collatz.Text = "chart1";
             // 
             // pn_Settings
             // 
@@ -140,38 +124,69 @@
             this.CLB_ChartFormat.Size = new System.Drawing.Size(239, 132);
             this.CLB_ChartFormat.TabIndex = 0;
             // 
+            // pn_UI
+            // 
+            this.pn_UI.BackColor = System.Drawing.Color.Gray;
+            this.pn_UI.Controls.Add(this.btn_ClearGraph);
+            this.pn_UI.Controls.Add(this.rtb_NumbersChosen);
+            this.pn_UI.Controls.Add(this.tb_Number);
+            this.pn_UI.Controls.Add(this.btn_Calc);
+            this.pn_UI.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pn_UI.Location = new System.Drawing.Point(0, 410);
+            this.pn_UI.Name = "pn_UI";
+            this.pn_UI.Size = new System.Drawing.Size(1317, 142);
+            this.pn_UI.TabIndex = 0;
+            // 
             // rtb_NumbersChosen
             // 
-            this.rtb_NumbersChosen.Location = new System.Drawing.Point(76, 20);
+            this.rtb_NumbersChosen.Location = new System.Drawing.Point(66, 20);
             this.rtb_NumbersChosen.Name = "rtb_NumbersChosen";
             this.rtb_NumbersChosen.Size = new System.Drawing.Size(483, 107);
             this.rtb_NumbersChosen.TabIndex = 2;
             this.rtb_NumbersChosen.Text = "";
             // 
-            // pnl_Graphs
+            // tb_Number
             // 
-            this.pnl_Graphs.Controls.Add(this.cht_Collatz);
-            this.pnl_Graphs.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Graphs.Name = "pnl_Graphs";
-            this.pnl_Graphs.Size = new System.Drawing.Size(1039, 409);
-            this.pnl_Graphs.TabIndex = 2;
+            this.tb_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Number.Location = new System.Drawing.Point(695, 20);
+            this.tb_Number.Name = "tb_Number";
+            this.tb_Number.Size = new System.Drawing.Size(344, 38);
+            this.tb_Number.TabIndex = 1;
+            this.tb_Number.TextChanged += new System.EventHandler(this.tb_Number_TextChanged);
             // 
-            // cht_Collatz
+            // btn_Calc
             // 
-            chartArea1.Name = "ChartArea1";
-            this.cht_Collatz.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.cht_Collatz.Legends.Add(legend1);
-            this.cht_Collatz.Location = new System.Drawing.Point(4, -2);
-            this.cht_Collatz.Name = "cht_Collatz";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.cht_Collatz.Series.Add(series1);
-            this.cht_Collatz.Size = new System.Drawing.Size(1035, 412);
-            this.cht_Collatz.TabIndex = 3;
-            this.cht_Collatz.Text = "chart1";
+            this.btn_Calc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Calc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Calc.Location = new System.Drawing.Point(695, 81);
+            this.btn_Calc.Name = "btn_Calc";
+            this.btn_Calc.Size = new System.Drawing.Size(344, 46);
+            this.btn_Calc.TabIndex = 0;
+            this.btn_Calc.Text = "Calculate";
+            this.btn_Calc.UseVisualStyleBackColor = true;
+            this.btn_Calc.Click += new System.EventHandler(this.btn_Calc_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1317, 552);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Stock Ticker";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btn_ClearGraph
+            // 
+            this.btn_ClearGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ClearGraph.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_ClearGraph.Location = new System.Drawing.Point(1063, 20);
+            this.btn_ClearGraph.Name = "btn_ClearGraph";
+            this.btn_ClearGraph.Size = new System.Drawing.Size(239, 107);
+            this.btn_ClearGraph.TabIndex = 3;
+            this.btn_ClearGraph.Text = "Clear All";
+            this.btn_ClearGraph.UseVisualStyleBackColor = true;
+            this.btn_ClearGraph.Click += new System.EventHandler(this.btn_ClearGraph_Click);
             // 
             // Form1
             // 
@@ -183,11 +198,11 @@
             this.Text = "Form1";
             this.tbc_Main.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.pn_UI.ResumeLayout(false);
-            this.pn_UI.PerformLayout();
-            this.pn_Settings.ResumeLayout(false);
             this.pnl_Graphs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cht_Collatz)).EndInit();
+            this.pn_Settings.ResumeLayout(false);
+            this.pn_UI.ResumeLayout(false);
+            this.pn_UI.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -205,6 +220,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart cht_Collatz;
         private System.Windows.Forms.CheckedListBox CLB_ChartFormat;
         private System.Windows.Forms.RichTextBox rtb_NumbersChosen;
+        private System.Windows.Forms.Button btn_ClearGraph;
     }
 }
 
