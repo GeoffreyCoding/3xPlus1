@@ -1,50 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace _3xPlus1
 {
-    public partial class Form1 : Form
+    public partial class CollatzConjecture : UserControl
     {
-        
-
-        public Form1()
+        #region
+        public CollatzConjecture()
         {
             InitializeComponent();
         }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// the calculate button click which starts the collatz conjecture calculation
+        /// </summary>
         private void btn_Calc_Click(object sender, EventArgs e)
         {
             calculateFormulaUsingInputedValue();
         }
         /// <summary>
-        /// gets the list of values
+        /// Is sent the linked list of values from the 3x+1 calculation and then uses LinQ to join them all with a comma
+        /// and then sets the text to that new concatenated string
         /// </summary>
-        private void getDataFromListAndInputIntoRTB(List<Int64> formulaConjectures)
+        private void getDataFromListAndInputIntoRTB(LinkedList<Int64> formulaConjectures)
         {
             string allConjectures = "";
-            foreach (Int64 value in formulaConjectures)
-            {
-                allConjectures = value.ToString() + ',';
-            }
-            rtb_NumbersChosen.Text = allConjectures;
+            rtb_NumbersChosen.Text = string.Join(",", formulaConjectures.Select(n => n.ToString()));
         }
         /// <summary>
-        /// takes the list of values and inputs them onto the graph or onto the rich text box where all conjectures will be placed.
+        /// takes the list of values and inputs them onto the graph.
         /// </summary>
-        private void insertDataOnToGraph(List<Int64> formulaConjectures)
+        private void insertDataOnToGraph(LinkedList<Int64> formulaConjectures)
         {
             // Initialize a Random object
             Random rnd = new Random();
@@ -52,10 +42,11 @@ namespace _3xPlus1
             var newSeries = new Series("Series" + (cht_Collatz.Series.Count() + 1));
             //Choosing a random colour
             newSeries.Color = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-            //adding the new series to the graph
+            //adding the new series to the 
             cht_Collatz.Series.Add(newSeries);
             cht_Collatz.Series[newSeries.Name].ChartType = SeriesChartType.Line;
             cht_Collatz.Series[newSeries.Name].Points.DataBindY(formulaConjectures);
+            cht_Collatz.Series[newSeries.Name].BorderWidth = 8;
             getDataFromListAndInputIntoRTB(formulaConjectures);
             formulaConjectures = null;
         }
@@ -68,25 +59,33 @@ namespace _3xPlus1
         /// </summary>
         private void calculateFormulaUsingInputedValue()
         {
-            List<Int64> formulaConjectures = new List<Int64>();
-            int currentValue = (int)Convert.ToInt64(tb_Number.Text);
-            while (currentValue > 1)
+            LinkedList<Int64> formulaConjectures = new LinkedList<Int64>();
+            if (Int64.TryParse(tb_Number.Text, out long result))
             {
-                formulaConjectures.Add(currentValue);
-                //determines if a number is even or odd
-                if (currentValue % 2 == 0)
+                int currentValue = (int)Convert.ToInt64(tb_Number.Text);
+                while (currentValue > 1)
                 {
-                    //even numbers
-                    currentValue /= 2;
+                    formulaConjectures.AddLast(currentValue);
+                    //determines if a number is even or odd
+                    if (currentValue % 2 == 0)
+                    {
+                        //even numbers
+                        currentValue /= 2;
+                    }
+                    else
+                    {
+                        //odd numbers
+                        currentValue = (3 * currentValue + 1) / 2;
+                    }
                 }
-                else
-                {
-                    //odd numbers
-                    currentValue = (3 * currentValue + 1) / 2;
-                }
+                formulaConjectures.AddLast(currentValue);
+                insertDataOnToGraph(formulaConjectures);
             }
-            formulaConjectures.Add(currentValue);
-            insertDataOnToGraph(formulaConjectures);
+            else
+            {
+                MessageBox.Show("Please enter a whole number! e.g 28374");
+            }
+            
         }
 
         private void tb_Number_TextChanged(object sender, EventArgs e)
@@ -99,7 +98,14 @@ namespace _3xPlus1
 
         private void btn_ClearGraph_Click(object sender, EventArgs e)
         {
-           cht_Collatz.Series.Clear();
+            cht_Collatz.Series.Clear();
         }
+
+        private void CLB_ChartFormat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
+

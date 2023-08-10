@@ -1,13 +1,13 @@
 ﻿namespace _3xPlus1
 {
-    partial class Form1
+    partial class CollatzConjecture
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -38,11 +38,11 @@
             this.pn_Settings = new System.Windows.Forms.Panel();
             this.CLB_ChartFormat = new System.Windows.Forms.CheckedListBox();
             this.pn_UI = new System.Windows.Forms.Panel();
+            this.btn_ClearGraph = new System.Windows.Forms.Button();
             this.rtb_NumbersChosen = new System.Windows.Forms.RichTextBox();
             this.tb_Number = new System.Windows.Forms.TextBox();
             this.btn_Calc = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btn_ClearGraph = new System.Windows.Forms.Button();
             this.tbc_Main.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.pnl_Graphs.SuspendLayout();
@@ -55,11 +55,11 @@
             // 
             this.tbc_Main.Controls.Add(this.tabPage1);
             this.tbc_Main.Controls.Add(this.tabPage2);
-            this.tbc_Main.Location = new System.Drawing.Point(12, 12);
+            this.tbc_Main.Location = new System.Drawing.Point(21, 36);
             this.tbc_Main.Name = "tbc_Main";
             this.tbc_Main.SelectedIndex = 0;
             this.tbc_Main.Size = new System.Drawing.Size(1325, 581);
-            this.tbc_Main.TabIndex = 0;
+            this.tbc_Main.TabIndex = 2;
             // 
             // tabPage1
             // 
@@ -73,7 +73,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Collatz Conjecture";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // pnl_Graphs
             // 
@@ -117,8 +116,7 @@
             this.CLB_ChartFormat.FormattingEnabled = true;
             this.CLB_ChartFormat.Items.AddRange(new object[] {
             "Line",
-            "Benfords Law",
-            "Tree View"});
+            "Benfords Law"});
             this.CLB_ChartFormat.Location = new System.Drawing.Point(18, 128);
             this.CLB_ChartFormat.Name = "CLB_ChartFormat";
             this.CLB_ChartFormat.Size = new System.Drawing.Size(239, 132);
@@ -137,6 +135,18 @@
             this.pn_UI.Size = new System.Drawing.Size(1317, 142);
             this.pn_UI.TabIndex = 0;
             // 
+            // btn_ClearGraph
+            // 
+            this.btn_ClearGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ClearGraph.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_ClearGraph.Location = new System.Drawing.Point(1063, 20);
+            this.btn_ClearGraph.Name = "btn_ClearGraph";
+            this.btn_ClearGraph.Size = new System.Drawing.Size(239, 107);
+            this.btn_ClearGraph.TabIndex = 3;
+            this.btn_ClearGraph.Text = "Clear All";
+            this.btn_ClearGraph.UseVisualStyleBackColor = true;
+            this.btn_ClearGraph.Click += new System.EventHandler(this.btn_ClearGraph_Click);
+            // 
             // rtb_NumbersChosen
             // 
             this.rtb_NumbersChosen.Location = new System.Drawing.Point(66, 20);
@@ -148,17 +158,17 @@
             // tb_Number
             // 
             this.tb_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Number.Location = new System.Drawing.Point(695, 20);
+            this.tb_Number.Location = new System.Drawing.Point(650, 20);
             this.tb_Number.Name = "tb_Number";
             this.tb_Number.Size = new System.Drawing.Size(344, 38);
             this.tb_Number.TabIndex = 1;
-            this.tb_Number.TextChanged += new System.EventHandler(this.tb_Number_TextChanged);
+            this.tb_Number.Text = "Enter a starting value";
             // 
             // btn_Calc
             // 
             this.btn_Calc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Calc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Calc.Location = new System.Drawing.Point(695, 81);
+            this.btn_Calc.Location = new System.Drawing.Point(650, 81);
             this.btn_Calc.Name = "btn_Calc";
             this.btn_Calc.Size = new System.Drawing.Size(344, 46);
             this.btn_Calc.TabIndex = 0;
@@ -176,26 +186,13 @@
             this.tabPage2.Text = "Stock Ticker";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btn_ClearGraph
-            // 
-            this.btn_ClearGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ClearGraph.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_ClearGraph.Location = new System.Drawing.Point(1063, 20);
-            this.btn_ClearGraph.Name = "btn_ClearGraph";
-            this.btn_ClearGraph.Size = new System.Drawing.Size(239, 107);
-            this.btn_ClearGraph.TabIndex = 3;
-            this.btn_ClearGraph.Text = "Clear All";
-            this.btn_ClearGraph.UseVisualStyleBackColor = true;
-            this.btn_ClearGraph.Click += new System.EventHandler(this.btn_ClearGraph_Click);
-            // 
-            // Form1
+            // CollatzConjecture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1349, 605);
             this.Controls.Add(this.tbc_Main);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "CollatzConjecture";
+            this.Size = new System.Drawing.Size(1367, 652);
             this.tbc_Main.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.pnl_Graphs.ResumeLayout(false);
@@ -211,16 +208,15 @@
 
         private System.Windows.Forms.TabControl tbc_Main;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Panel pn_Settings;
-        private System.Windows.Forms.Panel pn_UI;
-        private System.Windows.Forms.TextBox tb_Number;
-        private System.Windows.Forms.Button btn_Calc;
         private System.Windows.Forms.Panel pnl_Graphs;
         private System.Windows.Forms.DataVisualization.Charting.Chart cht_Collatz;
+        private System.Windows.Forms.Panel pn_Settings;
         private System.Windows.Forms.CheckedListBox CLB_ChartFormat;
-        private System.Windows.Forms.RichTextBox rtb_NumbersChosen;
+        private System.Windows.Forms.Panel pn_UI;
         private System.Windows.Forms.Button btn_ClearGraph;
+        private System.Windows.Forms.RichTextBox rtb_NumbersChosen;
+        private System.Windows.Forms.TextBox tb_Number;
+        private System.Windows.Forms.Button btn_Calc;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
-
